@@ -1,0 +1,12 @@
+<div class="index">
+<ul>
+	<li><strong>Artist: <%=@concert.artist%></strong><br>
+		<strong>Venue:</strong> <%=@concert.venue%><br>
+		<strong>City:</strong> <%=@concert.city%><br>
+		<strong>Date:</strong> <%=@concert.date.strftime("%Y-%m-%d - %k:%M")%><br>
+		<strong>Price:</strong> <%=@concert.price%>$<br>
+		<strong>Description:</strong> <%=@concert.description%>
+	</li>
+</ul>
+</div>
+

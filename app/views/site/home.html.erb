@@ -1,13 +1,30 @@
-<header>
-	<h1>Welcome to Concertia: The Music Concert Network</h1>
-</header>
-
-
-
-<div><%= link_to "All Concerts", concerts_path %></div>
-<div><%= link_to "Add a new Concert", new_concert_path %></div>
-
-<footer>
-	<p>@AJoeRed Powered</p>
-</footer>
+<div class="row">
+  <div class="col-md-3 col-xs-12">
+	<ul class="nav sidebar-nav">
+	<p><a href="/concerts"><button class="btn btn-default">All concerts</button></a></p>
+	<p><a href="/concerts/new"><button class="btn btn-default">Add a new Concert</button></a></p>
+	<div class="index">
+	<% @concerts_today.each do |concert| %>
+		<li><strong>Artist: <%=concert.artist%></strong><br>
+			<strong>City:</strong> <%=concert.city%><br>
+			<strong>Date:</strong> <%=concert.date.strftime("%Y-%m-%d - %k:%M")%><br>
+			<%= link_to "More Info", concert_path(concert) %>
+		</li>
+	<% end %>
+	</div>
+	</ul>
+  </div>
+  <div class="col-md-9 col-xs-12">
+  	<h1>Concerts for today</h1>
+	  <div class="index">
+	    <% @concerts_today.each do |concert| %>
+			<li><strong>Artist: <%=concert.artist%></strong><br>
+				<strong>City:</strong> <%=concert.city%><br>
+				<strong>Date:</strong> <%=concert.date.strftime("%Y-%m-%d - %k:%M")%><br>
+				<%= link_to "More Info", concert_path(concert) %>
+			</li>
+		<% end %>
+	  </div>
+  </div>
+</div>
 

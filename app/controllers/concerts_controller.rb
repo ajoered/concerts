@@ -19,6 +19,12 @@ class ConcertsController < ApplicationController
 	end
 
 	def index
+		@header = "ALL CONCERTS"
 		@concerts = Concert.all
+	end
+
+	def show
+		@header = Concert.find_by(id: params[:id]).artist
+		@concert = Concert.find_by(id: params[:id])
 	end
 end

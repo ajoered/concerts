@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="jumbotron text-center header">
+  		<h1><strong>Concertia |</strong> The Concert Network</h1>
+  		<p><%= @header %></p> 
+	</div>
+	<div class="container">
+    	<%= yield %>
+	</div>
+	<div class="jumbotron text-center footer">
+		<p>@AJoeRed Powered</p>
+    <p><%= link_to "Home", "/" %></p>
+	</div>
+</footer>
+
   </body>
 </html>
